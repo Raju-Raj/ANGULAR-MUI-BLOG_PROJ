@@ -1,0 +1,15 @@
+<mat-accordion *ngIf="posts.length>0">
+    <mat-expansion-panel *ngFor="let post of posts">
+        <mat-expansion-panel-header>
+           <p class="title"> {{post.title}}</p>
+        </mat-expansion-panel-header>
+        <p class="content">{{post.content}}</p>
+        <mat-action-row>
+            <p class="date">{{post.dateTime | date:"MMM/dd/yyyy,hh:mm:ss"}}</p>
+            <button mat-raised-button color="primary">Edit Post</button>
+            <button mat-raised-button color="warn">Delete Post</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<h2 *ngIf="posts.length<=0">NO POSTS AVAILABLE !</h2>
